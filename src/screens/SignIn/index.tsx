@@ -71,15 +71,15 @@ export function SignIn() {
 
           <SignInButton onPress={() => handleSignIn()}>
             <SignInButtonIcon>
-              Verify if isLoggingIn is true
-              If it is, show an ActivityIndicator
-              Otherwise, show Fontisto's twitch icon
+              {isLoggingIn ? (
+                <ActivityIndicator size="small" />
+              ) : (
+                <Fontisto name="twitch" size={24} />
+              )}
             </SignInButtonIcon>
 
             <SignInButtonText>
-              Verify if isLoggingIn is true
-              If it is, show "Entrando..."
-              Otherwise, show "Entrar com Twitch"
+              {isLoggingIn ? 'Entrando...' : 'Entrar com Twitch'}
             </SignInButtonText>
           </SignInButton>
         </LoginInfo>
